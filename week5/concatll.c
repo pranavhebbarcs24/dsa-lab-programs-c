@@ -39,16 +39,6 @@ node_t *concatenate_lists(node_t *head1, node_t *head2) {
     return head1;
 }
 
-void free_list(node_t *head) {
-    node_t *current = head;
-    node_t *temp;
-    while (current != NULL) {
-        temp = current;
-        current = current->next;
-        free(temp);
-    }
-}
-
 int main() {
     node_t *head1 = create_node(1);
     head1->next = create_node(2);
@@ -67,8 +57,6 @@ int main() {
 
     printf("List after concatenation: ");
     print_list(head1);
-
-    free_list(head1);
 
     return 0;
 }
