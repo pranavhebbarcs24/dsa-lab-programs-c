@@ -53,16 +53,6 @@ node_t *sort_list(node_t *head) {
     return head;
 }
 
-void free_list(node_t *head) {
-    node_t *current = head;
-    node_t *temp;
-    while (current != NULL) {
-        temp = current;
-        current = current->next;
-        free(temp);
-    }
-}
-
 int main() {
     node_t *head = create_node(4);
     head->next = create_node(1);
@@ -77,8 +67,6 @@ int main() {
 
     printf("Sorted list: ");
     print_list(head);
-
-    free_list(head);
 
     return 0;
 }
